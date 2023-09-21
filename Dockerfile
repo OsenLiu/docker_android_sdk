@@ -17,7 +17,10 @@ ENV PATH "${PATH}:${ANDROID_HOME}/platform-tools"
 ENV PATH "${PATH}:${ANDROID_HOME}/bin"
 
 RUN apt-get update \
- && apt-get install -y openjdk-${JDK_VERSION}-jdk wget unzip git build-essential python3.10 python3-pip
+ && apt-get install -y openjdk-${JDK_VERSION}-jdk wget unzip git build-essential python3.10 python3-pip npm zip
+
+RUN npm install -g n
+RUN n stable
 
 COPY tools /opt/tools
 COPY license /opt/license
