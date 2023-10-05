@@ -4,6 +4,7 @@ ARG TARGETARCH
 ARG JDK_VERSION=17
 ARG PLATFORM_VERSION=android-34
 ARG BUILD_TOOLS_VERSION=34.0.0-rc3
+ARG BUILD_TOOLS_VERSION2=33.0.1
 ARG NDK_VERSION=25.1.8937393
 ARG CMAKE_VERSION=3.22.1
 
@@ -41,6 +42,7 @@ RUN sdkmanager "platforms;${PLATFORM_VERSION}"
 RUN sdkmanager "platform-tools"
 
 RUN sdkmanager "build-tools;${BUILD_TOOLS_VERSION}"
+RUN sdkmanager "build-tools;${BUILD_TOOLS_VERSION2}"
 RUN sdkmanager "ndk;${NDK_VERSION}"
 RUN sdkmanager "cmake;${CMAKE_VERSION}"
 
